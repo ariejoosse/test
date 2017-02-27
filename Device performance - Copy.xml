@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ScoreDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UID="e8a48965-49fa-44e7-a7c7-5e6b33c8c9b8" SyntaxVersion="1" DataModelVersion="12" Object="device" Name="Device performance" Status="enabled">
+  <Platforms>
+    <Platform>windows</Platform>
+  </Platforms>
+  <ScopeQuery>
+    <Filtering>
+                (where device 
+                (ne device_type (enum server))
+                (le number_of_days_since_last_seen (integer 6)))
+                </Filtering>
+  </ScopeQuery>
+  <ComputationSchedule>
+    <Every>1h</Every>
+  </ComputationSchedule>
+  <CompositeScore UID="da0d46f0-a835-462e-afe5-da61b7000afe" Name="Device performance" Description="Indicates the device experience score." Visibility="visible">
+    <Operation>
+      <WeightedAverage />
+    </Operation>
+    <CompositeScore UID="30404114-3281-457f-9e90-4f1b4a4e0244" Name="Display" Description="Indicates the system experience score." Visibility="visible" Weight="1">
+      <Operation>
+        <WeightedAverage />
+      </Operation>
+      <LeafScore UID="d8281fe8-a4d1-4c88-885e-789ec6ead759" Name="Resolution" Description="Indicates the screen resolution experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Monitor resolution " Description="" UID="27f1096f-dd6b-4ba0-ae58-2f7ebd3f771c">
+            <Query Output="#Monitor resolution" DefaultOutputValue="NULL">
+              (select (id #"Monitor resolution") (from device
+              (where device
+              (ne #"Hardware type" (enum mobile))
+              (ne #"Hardware type" (enum "virtual desktop"))
+              (ne #"Hardware type" (enum "virtual server")))))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Enums>
+            <Enum Value="low" Score="0" />
+            <Enum Value="medium" Score="3" />
+            <Enum Value="high" Score="7" />
+            <Enum Value="very high" Score="10" />
+          </Enums>
+        </Normalization>
+      </LeafScore>
+      <LeafScore UID="1f88cebc-137b-4d12-bde6-d99cc05130b7" Name="Number of monitors" Description="Indicates the screen - number of monitors experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Number of monitors" Description="" UID="146c693d-1070-4543-9962-d357edc4a397">
+            <Query Output="number_of_monitors" DefaultOutputValue="NULL">
+              (select (id number_of_monitors) (from device
+              (where device
+              (ne #"Hardware type" (enum mobile))
+              (ne #"Hardware type" (enum "virtual desktop"))
+              (ne #"Hardware type" (enum "virtual server"))
+              )))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="1" Score="5" />
+            </Range>
+            <Range>
+              <From Value="2" Score="9" />
+            </Range>
+            <Range>
+              <From Value="3" Score="10" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+    </CompositeScore>
+    <CompositeScore UID="813154f0-d3d3-4e6e-8ed9-e4cd7e796bfd" Name="Hardware resources" Description="Indicates the system harware resources experience score." Visibility="visible" Weight="1">
+      <Operation>
+        <WeightedAverage />
+      </Operation>
+      <LeafScore UID="db136908-6fd7-4946-939d-e1eb0c8acc1b" Name="CPU" Description="Indicates the CPU experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="High device overall cpu time ratio last 7 days" Description="" UID="db831f9b-06b4-4504-8912-f57351f2ceec">
+            <Query Output="high_device_overall_cpu_time_ratio" DefaultOutputValue="0">
+              (select (id)
+              (from device
+              (with device_warning
+              (between now-7d now)
+              (compute high_device_overall_cpu_time_ratio))))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0.00" Score="10" />
+            </Range>
+            <Range>
+              <From Value="0.01" Score="8" />
+            </Range>
+            <Range>
+              <From Value="0.02" Score="5" />
+            </Range>
+            <Range>
+              <From Value="0.04" Score="2" />
+            </Range>
+            <Range>
+              <From Value="0.1" Score="0" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+      <LeafScore UID="af6a4ffa-db99-4cbb-9b25-ef76947dd90b" Name="Memory" Description="Indicates the memory experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Cumulated warning duration for high memory usage last 7 days" Description="" UID="450900f3-7d05-4e0a-9d93-76db8973858f">
+            <Query Output="cumulated_warning_duration" DefaultOutputValue="0">
+              (select (id)
+              (from device
+              (with device_warning
+              (where device_warning (eq type (enum 'high memory usage')))
+              (compute cumulated_warning_duration)
+              (between now-7d now))))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0" Score="10" />
+            </Range>
+            <Range>
+              <From Value="600000" Score="5" />
+            </Range>
+            <Range>
+              <From Value="14400000" Score="0" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+      <LeafScore UID="ad0884c4-03bb-49eb-8e86-9259bc520fc9" Name="Disk throughput" Description="Indicates the disk throuhput experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Cumulated warning duration for high io usage usage last 7 days" Description="" UID="c6e69ce8-2b51-4664-9bad-1219eae51cb5">
+            <Query Output="cumulated_warning_duration" DefaultOutputValue="0">
+              (select (id)
+              (from device
+              (with device_warning
+              (where device_warning (eq type (enum 'high io usage')))
+              (compute cumulated_warning_duration)
+              (between now-7d now))))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0" Score="10" />
+            </Range>
+            <Range>
+              <From Value="600000" Score="5" />
+            </Range>
+            <Range>
+              <From Value="14400000" Score="0" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+    </CompositeScore>
+    <CompositeScore UID="1327588a-9809-4a7c-9aca-0f3a258c46e9" Name="Network" Description="Indicates the ethernet experience score." Visibility="visible" Weight="1">
+      <Operation>
+        <WeightedAverage />
+      </Operation>
+      <LeafScore UID="5cb1ad66-e564-41e1-854b-4b4b1c6a2d18" Name="Failed web requests" Description="" Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Successful http request ratio last 7 days" Description="" UID="4d9c002c-696f-4247-9bda-424d22d1595c">
+            <Query Output="successful_http_requests_ratio" DefaultOutputValue="NULL">
+              (select (id)
+              (from device
+              (with web_request
+              (compute successful_http_requests_ratio)
+              (between now-7d now))))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0" Score="0" />
+            </Range>
+            <Range>
+              <From Value="0.9" Score="5" />
+            </Range>
+            <Range>
+              <From Value="0.98" Score="10" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+      <LeafScore UID="de2f438e-29e4-4e7b-b37c-38bab433a993" Name="Connectivity" Description="Indicates the connectivity experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Successful connections ratio last 7 days" Description="" UID="cb7f41e1-7419-4a44-bd22-97b01b389e83">
+            <Query Output="successful_connections_ratio" DefaultOutputValue="NULL">
+              (select (id)
+              (from device
+              (with connection
+              (compute successful_connections_ratio)
+              (between now-7d now))))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0" Score="0" />
+            </Range>
+            <Range>
+              <From Value="0.95" Score="5" />
+            </Range>
+            <Range>
+              <From Value="0.99" Score="10" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+      <LeafScore UID="87dcf917-c11e-49aa-8ce4-f5dcf51ab19d" Name="Response time" Description="Indicates the response time experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Response time last 7 days" Description="" UID="26d00d10-f9a5-424c-a30d-c9f54006f037">
+            <Query Output="average_network_response_time" DefaultOutputValue="NULL">
+              (select (id)
+              (from device
+              (with connection
+              (compute average_network_response_time)
+              (between now-7d now))))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0" Score="10" />
+            </Range>
+            <Range>
+              <From Value="10000" Score="8" />
+            </Range>
+            <Range>
+              <From Value="25000" Score="5" />
+            </Range>
+            <Range>
+              <From Value="50000" Score="2" />
+            </Range>
+            <Range>
+              <From Value="100000" Score="0" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+    </CompositeScore>
+    <CompositeScore UID="902dfd7d-0c0a-450d-8f28-cf33222730f4" Name="Device stability" Description="Indicates the stability experience score." Visibility="visible" Weight="1">
+      <Operation>
+        <WeightedAverage />
+      </Operation>
+      <LeafScore UID="a356a42a-db95-448e-a2d4-6e2fe2dea24c" Name="BSOD" Description="Indicates the BSOD experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Number of system crashes last 7 days" Description="" UID="bfb9282f-11dc-4602-9508-f3d1913cc926">
+            <Query Output="number_of_errors" DefaultOutputValue="0">
+              (select (id)
+              (from device
+              (with device_error
+              (where device_error (eq type (enum system_crash)))
+              (compute number_of_errors)
+              (between now-7d now))))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0" Score="10" />
+            </Range>
+            <Range>
+              <From Value="1" Score="0" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+      <LeafScore UID="c89e2cfa-9a48-4329-80cf-10e3c54b3c43" Name="Hard reset" Description="Indicates the hard reset experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Number of hard reset last 7 days" Description="" UID="5ae0ca20-457f-4066-9a59-dbf0cbd08a5c">
+            <Query Output="number_of_errors" DefaultOutputValue="0">
+              (select (id)
+              (from device
+              (with device_error
+              (where device_error (eq type (enum "hard reset")))
+              (compute number_of_errors)
+              (between now-7d now))))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0" Score="10" />
+            </Range>
+            <Range>
+              <From Value="1" Score="7" />
+            </Range>
+            <Range>
+              <From Value="2" Score="3" />
+            </Range>
+            <Range>
+              <From Value="4" Score="0" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+      <LeafScore UID="f53de4d3-5dcd-4de3-aee7-1b3729b8336e" Name="WMI" Description="Indicates the WMI experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Field Name="wmi_status" />
+        </Input>
+        <Normalization>
+          <Enums>
+            <Enum Value="ok" Score="10" />
+            <Enum Value="failure" Score="0" />
+          </Enums>
+        </Normalization>
+      </LeafScore>
+    </CompositeScore>
+    <CompositeScore UID="d6fd3a1f-2d95-4f16-a375-0485ff0c87e9" Name="Software" Description="Indicates the software experience score." Visibility="visible" Weight="1">
+      <Operation>
+        <WeightedAverage />
+      </Operation>
+      <CompositeScore UID="fad00d24-80c8-4f87-9187-b27cdcc3ff6f" Name="Software stability" Description="Indicates the software stability experience score." Visibility="visible" Weight="1">
+        <Operation>
+          <WeightedAverage />
+        </Operation>
+        <LeafScore UID="8336c1da-b874-4acc-8ac4-e154d1db2b19" Name="Software crashes" Description="Indicates the software stability (crashes) experience score." Visibility="visible" Weight="1">
+          <Input>
+            <Computation Name="Number of application crash last 7 days" Description="" UID="8b740e29-da50-4c42-81b6-fd68d9b28464">
+              <Query Output="number_of_errors" DefaultOutputValue="0">
+                (select (id)
+                (from device
+                (with execution_error
+                (where execution_error (eq type (enum crash)))
+                (compute number_of_errors)
+                (between now-7d now)))
+                          </Query>
+            </Computation>
+          </Input>
+          <Normalization>
+            <Ranges>
+              <Range>
+                <From Value="0" Score="10" />
+              </Range>
+              <Range>
+                <From Value="1" Score="8" />
+              </Range>
+              <Range>
+                <From Value="2" Score="5" />
+              </Range>
+              <Range>
+                <From Value="3" Score="2" />
+              </Range>
+              <Range>
+                <From Value="5" Score="0" />
+              </Range>
+            </Ranges>
+          </Normalization>
+        </LeafScore>
+        <LeafScore UID="7e9ff3bd-748a-4308-b790-551506ecbf30" Name="Software freezes" Description="Indicates the software stability (freezes) experience score." Visibility="visible" Weight="1">
+          <Input>
+            <Computation Name="Number of application freeze last 7 days " Description="" UID="2c716fbc-f29b-43e7-8fe2-e6726debf993">
+              <Query Output="number_of_errors" DefaultOutputValue="0">
+                (select (id)
+                (from device
+                (with execution_error
+                (where execution_error (eq type (enum "application not responding")))
+                (compute number_of_errors)
+                (between now-7d now)))
+                          </Query>
+            </Computation>
+          </Input>
+          <Normalization>
+            <Ranges>
+              <Range>
+                <From Value="0" Score="10" />
+              </Range>
+              <Range>
+                <From Value="1" Score="8" />
+              </Range>
+              <Range>
+                <From Value="2" Score="5" />
+              </Range>
+              <Range>
+                <From Value="3" Score="2" />
+              </Range>
+              <Range>
+                <From Value="5" Score="0" />
+              </Range>
+            </Ranges>
+          </Normalization>
+        </LeafScore>
+      </CompositeScore>
+      <LeafScore UID="d9f79803-8f15-4684-9658-70dd129f3adc" Name="Number of packages" Description="Indicates the software - number of packages experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Number of packages" Description="" UID="dcc5cb0f-63fe-44f5-843a-1b3d36c29980">
+            <Query Output="number_of_packages" DefaultOutputValue="0">
+              (select (id)
+              (from device
+              (with package
+              (where package (eq type (enum program)))
+              (compute number_of_packages))))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0" Score="10" />
+            </Range>
+            <Range>
+              <From Value="75" Score="8" />
+            </Range>
+            <Range>
+              <From Value="150" Score="5" />
+            </Range>
+            <Range>
+              <From Value="250" Score="2" />
+            </Range>
+            <Range>
+              <From Value="500" Score="0" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+      <LeafScore UID="dc058e28-6412-40e3-9922-800b435527f1" Name="Software age" Description="Indicates the software age experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Computation Name="Number of old executables" Description="" UID="84177211-f84f-469d-aa5b-69fd138b3c35">
+            <Query Output="number_of_executables" DefaultOutputValue="0">
+              (select (id)
+              (from device
+              (with execution
+              (where executable (eq #"Legacy software" (enum yes)))
+              (compute number_of_executables)
+              (between now-7d now)))
+                        </Query>
+          </Computation>
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0" Score="10" />
+            </Range>
+            <Range>
+              <From Value="2" Score="7" />
+            </Range>
+            <Range>
+              <From Value="5" Score="3" />
+            </Range>
+            <Range>
+              <From Value="10" Score="0" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+    </CompositeScore>
+    <CompositeScore UID="c3a3050d-3c93-473c-bc0d-ea8460e9ecda" Name="Startup" Description="Indicates the startup experience score." Visibility="visible" Weight="1">
+      <Operation>
+        <WeightedAverage />
+      </Operation>
+      <LeafScore UID="08fe1df2-a696-4d75-bf4e-62ee0d64ae69" Name="Boot speed" Description="Indicates the boot speed experience score." Visibility="visible" Weight="1">
+        <Input>
+          <Field Name="average_boot_duration" />
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0.001" Score="10" />
+            </Range>
+            <Range>
+              <From Value="15000" Score="8" />
+            </Range>
+            <Range>
+              <From Value="30000" Score="5" />
+            </Range>
+            <Range>
+              <From Value="60000" Score="2" />
+            </Range>
+            <Range>
+              <From Value="120000" Score="0" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+      <CompositeScore UID="82a35a39-29aa-4c34-bd44-83fa8b33044a" Name="Logon speed" Description="Indicates the logon experience score." Visibility="visible" Weight="1">
+        <Operation>
+          <WeightedAverage />
+        </Operation>
+        <LeafScore UID="12e858b7-aaf8-4bd5-be39-f1797cf4ac8e" Name="Logon duration" Description="Indicates the logon duration experience score." Visibility="visible" Weight="1">
+          <Input>
+            <Field Name="average_logon_duration" />
+          </Input>
+          <Normalization>
+            <Ranges>
+              <Range>
+                <From Value="0.001" Score="10" />
+              </Range>
+              <Range>
+                <From Value="15000" Score="8" />
+              </Range>
+              <Range>
+                <From Value="30000" Score="5" />
+              </Range>
+              <Range>
+                <From Value="60000" Score="2" />
+              </Range>
+              <Range>
+                <From Value="120000" Score="0" />
+              </Range>
+            </Ranges>
+          </Normalization>
+        </LeafScore>
+        <LeafScore UID="bdd64f5d-dc3a-4d59-9cb6-d05ea1a01964" Name="Extended logon duration" Description="Indicates the extended logon duration experience score." Visibility="visible" Weight="1">
+          <Input>
+            <Field Name="extended_logon_duration_baseline" />
+          </Input>
+          <Normalization>
+            <Ranges>
+              <Range>
+                <From Value="0.001" Score="10" />
+              </Range>
+              <Range>
+                <From Value="45000" Score="8" />
+              </Range>
+              <Range>
+                <From Value="90000" Score="5" />
+              </Range>
+              <Range>
+                <From Value="180000" Score="2" />
+              </Range>
+              <Range>
+                <From Value="360000" Score="0" />
+              </Range>
+            </Ranges>
+          </Normalization>
+        </LeafScore>
+      </CompositeScore>
+    </CompositeScore>
+    <CompositeScore UID="b41dd4c3-c5dc-41dc-ac71-382e1aad935f" Name="Storage" Description="Indicates the storage experience score." Visibility="visible" Weight="1">
+      <Operation>
+        <WeightedAverage />
+      </Operation>
+      <LeafScore UID="c8b28684-4025-4547-90af-bc5e5caaaedd" Name="Health" Description="Indicates the disk health experience score. If the S.M.A.R.T index is:&#xD;&#xA; • Less than 80% ==&gt; 0. &#xD;&#xA; • If between 80% and 99.99% ==&gt; 50. &#xD;&#xA; • If equal to 100% ==&gt; 100. &#xD;&#xA; • If no info ==&gt; &quot; - &quot;." Visibility="visible" Weight="1">
+        <Input>
+          <Field Name="disks_smart_index" />
+        </Input>
+        <Normalization>
+          <Ranges>
+            <Range>
+              <From Value="0.0" Score="0" />
+            </Range>
+            <Range>
+              <From Value="0.8" Score="5" />
+            </Range>
+            <Range>
+              <From Value="1.0" Score="10" />
+            </Range>
+          </Ranges>
+        </Normalization>
+      </LeafScore>
+      <CompositeScore UID="97f55d1d-b4a1-43aa-b270-a1150d76af11" Name="Free space" Description="Indicates the free disk space experience score." Visibility="visible" Weight="1">
+        <Operation>
+          <WeightedAverage />
+        </Operation>
+        <CompositeScore UID="58c4dec5-4fd7-4a25-8210-7fb378713d63" Name="System free space" Description="" Visibility="visible" Weight="1">
+          <Operation>
+            <Min />
+          </Operation>
+          <LeafScore UID="58382720-5cd3-4282-bd80-c26d6d1c2a46" Name="Percentage of free space" Description="" Visibility="visible" Weight="1">
+            <Input>
+              <Field Name="system_drive_usage" />
+            </Input>
+            <Normalization>
+              <Ranges>
+                <Range>
+                  <From Value="0" Score="10" />
+                </Range>
+                <Range>
+                  <From Value="0.5" Score="8" />
+                </Range>
+                <Range>
+                  <From Value="0.65" Score="5" />
+                </Range>
+                <Range>
+                  <From Value="0.8" Score="2" />
+                </Range>
+                <Range>
+                  <From Value="0.9" Score="0" />
+                </Range>
+              </Ranges>
+            </Normalization>
+          </LeafScore>
+          <LeafScore UID="19f8a9ef-0dff-48a6-8b08-74c9b57beb27" Name="Absolute free space" Description="Indicates the system free space experience score. If the system drive free space is:&#xD;&#xA; • Less than 5GB ==&gt; 0. &#xD;&#xA; • If between 5 and 20GB ==&gt; 50. &#xD;&#xA; • If more than 20GB ==&gt; 100. &#xD;&#xA; • If no info  ==&gt; &quot;-&quot;" Visibility="visible" Weight="1">
+            <Input>
+              <Field Name="system_drive_free_space" />
+            </Input>
+            <Normalization>
+              <Ranges>
+                <Range>
+                  <From Value="1" Score="0" />
+                </Range>
+                <Range>
+                  <From Value="5368709120" Score="5" />
+                </Range>
+                <Range>
+                  <From Value="21474836480" Score="10" />
+                </Range>
+              </Ranges>
+            </Normalization>
+          </LeafScore>
+        </CompositeScore>
+        <LeafScore UID="9b613c41-fdee-4562-956d-bbaaf3b10005" Name="Non-system free space" Description="" Visibility="visible" Weight="1">
+          <Input>
+            <Computation Name="Non system drive usage" Description="" UID="988ea4a9-d35c-4a7b-ba00-c30684f85648">
+              <Query Output="total_nonsystem_drive_usage" DefaultOutputValue="NULL">
+                (select (id total_nonsystem_drive_usage) (from device
+                (where device
+                (gt total_nonsystem_drive_capacity (byte 0)))))
+                          </Query>
+            </Computation>
+          </Input>
+          <Normalization>
+            <Ranges>
+              <Range>
+                <From Value="0" Score="10" />
+              </Range>
+              <Range>
+                <From Value="0.5" Score="8" />
+              </Range>
+              <Range>
+                <From Value="0.65" Score="5" />
+              </Range>
+              <Range>
+                <From Value="0.8" Score="2" />
+              </Range>
+              <Range>
+                <From Value="0.9" Score="0" />
+              </Range>
+            </Ranges>
+          </Normalization>
+        </LeafScore>
+      </CompositeScore>
+    </CompositeScore>
+  </CompositeScore>
+</ScoreDef>
