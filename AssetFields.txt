@@ -1,0 +1,1514 @@
+Computer:
+array(8) {
+  ["settings"]=>
+  array(6) {
+    ["algemeen.bedragprefix"]=>
+    string(0) ""
+    ["algemeen.bedragpostfix"]=>
+    string(4) "euro"
+    ["dateFormat"]=>
+    string(14) "DD[-]MM[-]YYYY"
+    ["groupingDelimiter"]=>
+    string(1) ","
+    ["timeFormat"]=>
+    string(5) "HH:mm"
+    ["decimalDelimiter"]=>
+    string(1) "."
+  }
+  ["metadata"]=>
+  array(4) {
+    ["templateName"]=>
+    string(8) "Computer"
+    ["template"]=>
+    array(1) {
+      ["tabs"]=>
+      array(1) {
+        [0]=>
+        array(2) {
+          ["resourceKey"]=>
+          string(21) "tas.reference.general"
+          ["columns"]=>
+          array(2) {
+            [0]=>
+            array(2) {
+              ["size"]=>
+              string(3) "1-2"
+              ["widgets"]=>
+              array(3) {
+                [0]=>
+                array(2) {
+                  ["widgetType"]=>
+                  string(13) "generalWidget"
+                  ["resourceKey"]=>
+                  string(21) "tas.reference.general"
+                }
+                [1]=>
+                array(4) {
+                  ["widgetType"]=>
+                  string(14) "fieldSetWidget"
+                  ["title"]=>
+                  string(7) "Details"
+                  ["resourceKey"]=>
+                  string(31) "assetmgmt.widget.fieldset.title"
+                  ["fields"]=>
+                  array(5) {
+                    [0]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(21) "fields/computer-brand"
+                    }
+                    [1]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(18) "fields/mac-address"
+                    }
+                    [2]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(17) "fields/ip-address"
+                    }
+                    [3]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(16) "fields/memory-gb"
+                    }
+                    [4]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(17) "fields/storage-gb"
+                    }
+                  }
+                }
+                [2]=>
+                array(2) {
+                  ["widgetType"]=>
+                  string(16) "assignmentWidget"
+                  ["resourceKey"]=>
+                  string(33) "assetmgmt.widget.assignment.title"
+                }
+              }
+            }
+            [1]=>
+            array(2) {
+              ["size"]=>
+              string(3) "1-2"
+              ["widgets"]=>
+              array(3) {
+                [0]=>
+                array(4) {
+                  ["widgetType"]=>
+                  string(14) "fieldSetWidget"
+                  ["title"]=>
+                  string(9) "Financial"
+                  ["resourceKey"]=>
+                  string(31) "assetmgmt.widget.fieldset.title"
+                  ["fields"]=>
+                  array(2) {
+                    [0]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(20) "fields/purchase-date"
+                    }
+                    [1]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(21) "fields/purchase-price"
+                    }
+                  }
+                }
+                [1]=>
+                array(2) {
+                  ["widgetType"]=>
+                  string(13) "historyWidget"
+                  ["resourceKey"]=>
+                  string(30) "assetmgmt.widget.history.title"
+                }
+                [2]=>
+                array(2) {
+                  ["widgetType"]=>
+                  string(18) "relationshipWidget"
+                  ["resourceKey"]=>
+                  string(35) "assetmgmt.widget.relationship.title"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ["icon"]=>
+    array(4) {
+      ["id"]=>
+      string(13) "configuration"
+      ["name"]=>
+      string(13) "Configuration"
+      ["url16"]=>
+      string(23) "/icons/configuration/16"
+      ["url32"]=>
+      string(23) "/icons/configuration/32"
+    }
+    ["@etag"]=>
+    string(32) "2017-02-17T07:02:59.833         "
+  }
+  ["data"]=>
+  array(14) {
+    ["@etag"]=>
+    string(4) "NULL"
+    ["mac-address"]=>
+    NULL
+    ["unid"]=>
+    NULL
+    ["storage-gb"]=>
+    NULL
+    ["type_id"]=>
+    string(36) "081F1BC1-EE31-4706-8D3A-904161FF2D63"
+    ["specification"]=>
+    NULL
+    ["purchase-date"]=>
+    NULL
+    ["memory-gb"]=>
+    NULL
+    ["computer-brand"]=>
+    NULL
+    ["archived"]=>
+    bool(false)
+    ["modificationDate"]=>
+    NULL
+    ["ip-address"]=>
+    NULL
+    ["name"]=>
+    NULL
+    ["purchase-price"]=>
+    NULL
+  }
+  ["resources"]=>
+  array(181) {
+    ["assetmgmt.history.filter.title.filtered"]=>
+    string(8) "Filtered"
+    ["assetmgmt.widget.document.upload_status.no_files_selected"]=>
+    string(22) "No files are selected."
+    ["assetmgmt.widget.assignment.items.placeholder"]=>
+    string(44) "Assigned rooms and persons will appear here."
+    ["assetmgmt.field.users_can_add_options"]=>
+    string(21) "Users can add options"
+    ["assetmgmt.widget.document.upload_files"]=>
+    string(12) "Upload files"
+    ["assetmgmt.functionality.export_csv"]=>
+    string(16) "Get CSV template"
+    ["assetmgmt.widget.edit_field.possible_validation_change"]=>
+    string(51) "Changes will affect every occurrence of this field."
+    ["assetmgmt.design.add.widget"]=>
+    string(10) "Add widget"
+    ["errors.404.message.title"]=>
+    string(14) "What happened?"
+    ["assetmgmt.overview.error.cannotdelete"]=>
+    string(82) "Some cards could not be deleted because they are still linked to from other cards."
+    ["assetmgmt.widget.assignment.branch.link_exists"]=>
+    string(39) "The same site cannot be assigned twice."
+    ["assetmgmt.popup.body.migration.checking"]=>
+    string(36) "Checking the compatibility of %1%..."
+    ["assetmgmt.popup.footer.migration.select_another_type"]=>
+    string(19) "Select another type"
+    ["assetmgmt.popup.footer.migration.check_object_type"]=>
+    string(17) "Check object type"
+    ["assetmgmt.datasources.own_options"]=>
+    string(11) "Own options"
+    ["assetmgmt.widget.add_field.field_id"]=>
+    string(8) "Field id"
+    ["assetmgmt.widget.add_field.type"]=>
+    string(4) "Type"
+    ["assetmgmt.widget.add_field.text_field"]=>
+    string(4) "Text"
+    ["assetmgmt.popup.footer.migration.check_type"]=>
+    string(9) "Check %1%"
+    ["errors.404.message"]=>
+    string(69) "The specified URL is not recognized by the TOPdesk ApplicationServer."
+    ["assetmgmt.assetcard.new_asset_title"]=>
+    string(9) "New asset"
+    ["assetmgmt.widget.toolbar.assignments.assign_person"]=>
+    string(13) "Assign person"
+    ["assetmgmt.widget.relationship.toolbar.link_asset"]=>
+    string(10) "Link asset"
+    ["assetmgmt.widget.add_field.suggest_field.add"]=>
+    string(10) "Add option"
+    ["assetmgmt.widget.relationship.card_mode.placeholder"]=>
+    string(37) "There are no other assets linked yet."
+    ["assetmgmt.widget.add_field.suggest_field.option3"]=>
+    string(8) "Option 3"
+    ["assetmgmt.widget.remove"]=>
+    string(13) "Remove widget"
+    ["assetmgmt.field.length.maximum"]=>
+    string(14) "Maximum length"
+    ["assetmgmt.widget.remove.additional_message"]=>
+    string(41) "You can always restore individual fields."
+    ["assetmgmt.widget.document.upload_status.finished"]=>
+    string(19) "Uploading finished."
+    ["assetmgmt.assetcard.autosave.error"]=>
+    string(64) "A problem was encountered while saving. Please refresh the page."
+    ["assetmgmt.widget.add_field.suggest_field.new_option"]=>
+    string(10) "New option"
+    ["assetmgmt.history.assignment.assign.location"]=>
+    string(16) "assigned a room."
+    ["assetmgmt.unassign"]=>
+    string(8) "Unassign"
+    ["assetmgmt.widget.relationship.toolbar.unlink_asset"]=>
+    string(6) "Unlink"
+    ["assetmgmt.loading"]=>
+    string(7) "Loading"
+    ["assetmgmt.widget.history.title"]=>
+    string(7) "History"
+    ["assetmgmt.widget.add_field.suggest_field.option2"]=>
+    string(8) "Option 2"
+    ["assetmgmt.widget.add_field.suggest_field.option1"]=>
+    string(8) "Option 1"
+    ["assetmgmt.popup.body.migration.migrated"]=>
+    string(33) "Migrated %1% to Asset Management."
+    ["assetmgmt.card.close.title"]=>
+    string(11) "Close asset"
+    ["assetmgmt.widget.relationship.unlink_message"]=>
+    string(43) "Are you sure you want to unlink this asset?"
+    ["assetmgmt.history.assignment.unassign.branch"]=>
+    string(18) "unassigned a site."
+    ["assetmgmt.history.assignment.assign.branch"]=>
+    string(16) "assigned a site."
+    ["assetmgmt.functionality.enter_design_mode"]=>
+    string(16) "Open design mode"
+    ["assetmgmt.template.duplicated_name"]=>
+    string(36) "This template name is already taken."
+    ["assetmgmt.popup.footer.migration.migrate_another_type"]=>
+    string(20) "Migrate another type"
+    ["assetmgmt.unassign.question.person"]=>
+    string(46) "Are you sure you want to unassign this person?"
+    ["assetmgmt.popup.body.migration.migrating"]=>
+    string(36) "Migrating %1% to Asset Management..."
+    ["assetmgmt.overview.column.specification"]=>
+    string(13) "Specification"
+    ["assetmgmt.widget.add_field.button_edit_field"]=>
+    string(12) "Save changes"
+    ["assetmgmt.popup.header.feedback"]=>
+    string(17) "Give us feedback!"
+    ["assetmgmt.field.properties.showtime"]=>
+    string(9) "Show time"
+    ["assetmgmt.field.properties.is_currency"]=>
+    string(8) "Currency"
+    ["navigation.loading"]=>
+    string(10) "Loading…"
+    ["assetmgmt.template.explorer.templates.title"]=>
+    string(9) "Templates"
+    ["assetmgmt.history.assignment.assign.person"]=>
+    string(18) "assigned a person."
+    ["assetmgmt.overview.column.name"]=>
+    string(9) "Object ID"
+    ["assetmgmt.document.delete.message"]=>
+    string(46) "Are you sure you want to delete this document?"
+    ["assetmgmt.button.back"]=>
+    string(4) "Back"
+    ["assetmgmt.widget.toolbar.add_field"]=>
+    string(9) "Add field"
+    ["assetmgmt.history.assignment.unassign.person"]=>
+    string(20) "unassigned a person."
+    ["assetmgmt.unassign.question.location"]=>
+    string(44) "Are you sure you want to unassign this room?"
+    ["assetmgmt.widget.assignment.person.link_exists"]=>
+    string(57) "The same person or person group cannot be assigned twice."
+    ["assetmgmt.widget.add_field.number_field"]=>
+    string(6) "Number"
+    ["assetmgmt.template.editor.new.save"]=>
+    string(17) "Save new template"
+    ["assetmgmt.widget.add_field.suggest_field"]=>
+    string(9) "Drop-down"
+    ["assetmgmt.widget.add_field.checkbox_field"]=>
+    string(8) "Checkbox"
+    ["assetmgmt.popup.body.migration.warning"]=>
+    string(125) "Please be aware that migrated object types will be permanently unavailable in Configuration Management. Proceed with caution."
+    ["assetmgmt.widget.document.upload_status.uploading"]=>
+    string(9) "Uploading"
+    ["assetmgmt.template.explorer.title"]=>
+    string(23) "Asset template explorer"
+    ["errors.400.title"]=>
+    string(11) "Bad Request"
+    ["assetmgmt.popup.body.migration.success"]=>
+    string(53) "%1% can be migrated without any compatibility issues."
+    ["assetmgmt.widget.document.title"]=>
+    string(9) "Documents"
+    ["assetmgmt.history.empty"]=>
+    string(7) "(empty)"
+    ["assetmgmt.history.assignment.unassign.location"]=>
+    string(18) "unassigned a room."
+    ["assetmgmt.unassign.question.branch"]=>
+    string(44) "Are you sure you want to unassign this site?"
+    ["assetmgmt.field.suggest.no_results_found"]=>
+    string(17) "No results found."
+    ["assetmgmt.overview.deletepopup.title"]=>
+    string(12) "Delete cards"
+    ["assetmgmt.field.properties.multiline"]=>
+    string(28) "Allow multiple lines of text"
+    ["assetmgmt.widget.assignment.content.locations.title"]=>
+    string(5) "Rooms"
+    ["assetmgmt.widget.assignment.branch.title"]=>
+    string(4) "Site"
+    ["assetmgmt.popup.body.migration.type_selection"]=>
+    string(91) "Select the object type in Configuration Management you want to migrate to Asset Management."
+    ["assetmgmt.widget.toolbar.assignments.assign_location"]=>
+    string(11) "Assign room"
+    ["javascriptautocomplete_no_results_found"]=>
+    string(18) "(no results found)"
+    ["assetmgmt.widget.assignment.content.persons.title"]=>
+    string(7) "Persons"
+    ["assetmgmt.card.close.discard"]=>
+    string(7) "Discard"
+    ["assetmgmt.widget.relationship.select_asset"]=>
+    string(12) "Select asset"
+    ["assetmgmt.document.delete.additionalMessage"]=>
+    string(37) "Deleted documents cannot be restored."
+    ["assetmgmt.widget.add_field.suggest_field.label"]=>
+    string(18) "Selectable options"
+    ["assetmgmt.functionality.archive"]=>
+    string(7) "Archive"
+    ["button_close"]=>
+    string(5) "Close"
+    ["errors.404.title"]=>
+    string(14) "Page not found"
+    ["assetmgmt.popup.header.migration"]=>
+    string(39) "Migrate object type to Asset Management"
+    ["assetmgmt.widget.add_field.suggest_field.external_source"]=>
+    string(58) "{assetmgmt.widget.add_field.suggest_field.external_source}"
+    ["assetmgmt.popup.body.migration.checking_failed"]=>
+    string(38) "The compatibility check of %1% failed."
+    ["assetmgmt.widget.general.toolbar.change_icon"]=>
+    string(11) "Change icon"
+    ["assetmgmt.template.editor.new.placeholder"]=>
+    string(10) "Asset type"
+    ["assetmgmt.history.assignment.assign.persongroup"]=>
+    string(24) "assigned a person group."
+    ["assetmgmt.general.asset"]=>
+    string(5) "Asset"
+    ["assetmgmt.template.editor.empty_state"]=>
+    string(47) "Select a template from the left panel to begin."
+    ["assetmgmt.field.mandatory"]=>
+    string(9) "Mandatory"
+    ["assetmgmt.assetcard.title.template"]=>
+    string(8) "Template"
+    ["assetmgmt.widget.assignment.location.title"]=>
+    string(4) "Room"
+    ["assetmgmt.widget.toolbar.edit"]=>
+    string(4) "Edit"
+    ["assetmgmt.functionality.leave_design_mode"]=>
+    string(17) "Close design mode"
+    ["assetmgmt.field.remove.message"]=>
+    string(43) "Are you sure you want to remove this field?"
+    ["button_refresh"]=>
+    string(7) "Refresh"
+    ["assetmgmt.widget.document.upload_status.files_for_upload"]=>
+    string(24) "files marked for upload."
+    ["assetmgmt.history.assignment.modifications"]=>
+    string(11) "Assignments"
+    ["assetmgmt.delete_explanation"]=>
+    string(42) "Are you sure you want to delete %1% (%2%)?"
+    ["assetmgmt.widget.document.empty"]=>
+    string(44) "This asset does not have uploaded documents."
+    ["assetmgmt.assetcard.save.concurrent.modification"]=>
+    string(45) "This asset has been modified in the meantime."
+    ["httpactie.field.body.name"]=>
+    string(7) "Message"
+    ["tas.reference.general"]=>
+    string(7) "General"
+    ["assetmgmt.widget.relationship.cannot_link_itself"]=>
+    string(36) "An asset cannot be linked to itself."
+    ["assetmgmt.popup.body.migration.card"]=>
+    string(4) "Card"
+    ["assetmgmt.functionality.unarchive"]=>
+    string(9) "Unarchive"
+    ["assetmgmt.widget.relationship.children"]=>
+    string(8) "Children"
+    ["assetmgmt.design.select.widget"]=>
+    string(22) "Select a widget to add"
+    ["assetmgmt.widget.relationship.cannot_link_indirect"]=>
+    string(46) "An indirect link to this asset already exists."
+    ["assetmgmt.widget.document.choose_files"]=>
+    string(12) "Choose files"
+    ["assetmgmt.widget.assignment.title"]=>
+    string(10) "Assignment"
+    ["assetmgmt.template.editor.title"]=>
+    string(17) "Template explorer"
+    ["assetmgmt.widget.document.or_drop_files"]=>
+    string(24) "or drop your files here."
+    ["assetmgmt.widget.add_field.suggest_field.source"]=>
+    string(49) "{assetmgmt.widget.add_field.suggest_field.source}"
+    ["assetmgmt.field.suggest.can_not_add"]=>
+    string(23) "This option is invalid."
+    ["assetmgmt.card.close.content"]=>
+    string(135) "You have modified the card but the changes have not yet been saved. Do you wish to discard the changes or cancel to return to the card?"
+    ["button_cancel"]=>
+    string(6) "Cancel"
+    ["assetmgmt.template.new.title"]=>
+    string(12) "New Template"
+    ["assetmgmt.widget.add_field.suggest_field.remove"]=>
+    string(6) "Remove"
+    ["assetmgmt.widget.relationship.unlink_asset"]=>
+    string(12) "Unlink asset"
+    ["assetmgmt.document.delete"]=>
+    string(15) "Delete document"
+    ["assetmgmt.widget.remove.message"]=>
+    string(44) "Are you sure you want to remove this widget?"
+    ["assetmgmt.widget.relationship.parents"]=>
+    string(7) "Parents"
+    ["assetmgmt.template.explorer.create"]=>
+    string(15) "Create template"
+    ["assetmgmt.widget.toolbar.remove"]=>
+    string(6) "Remove"
+    ["assetmgmt.widget.document.items.placeholder"]=>
+    string(50) "Documents uploaded to this asset will appear here."
+    ["assetmgmt.unassign.question.person_group"]=>
+    string(52) "Are you sure you want to unassign this person group?"
+    ["assetmgmt.widget.assignment.person.title"]=>
+    string(22) "Person or person group"
+    ["assetmgmt.popup.footer.migration.migrate"]=>
+    string(11) "Migrate %1%"
+    ["assetmgmt.field.properties.decimal_precision"]=>
+    string(18) "Number of decimals"
+    ["tas.reference.archived"]=>
+    string(8) "Archived"
+    ["assetmgmt.archive_explanation"]=>
+    string(61) "You will not be able to modify this card once you archive it."
+    ["assetmgmt.widget.assignment.empty"]=>
+    string(53) "There are no rooms or persons assigned to this asset."
+    ["assetmgmt.popup.body.migration.error"]=>
+    string(71) "%1% cannot be migrated because some objects use the following features:"
+    ["assetmgmt.widget.add_field.date_time_field"]=>
+    string(9) "Date/time"
+    ["assetmgmt.widget.relationship.design_mode.placeholder"]=>
+    string(31) "Linked assets will appear here."
+    ["button_delete"]=>
+    string(6) "Delete"
+    ["assetmgmt.widget.edit_field.create_and_add_field"]=>
+    string(20) "Create and add field"
+    ["assetmgmt.widget.relationship.cannot_link_twice"]=>
+    string(32) "An asset cannot be linked twice."
+    ["assetmgmt.widget.general.select_icon"]=>
+    string(35) "Select an icon for this asset type:"
+    ["assetmgmt.history.assignment.unassign.persongroup"]=>
+    string(26) "unassigned a person group."
+    ["tas.default.archive_reason"]=>
+    string(20) "Reason for archiving"
+    ["assetmgmt.history.filter.title.all"]=>
+    string(3) "All"
+    ["errors.404.subtitle"]=>
+    string(59) "We are sorry, but the page you requested could not be found"
+    ["assetmgmt.widget.fieldset.title"]=>
+    string(8) "Fieldset"
+    ["assetmgmt.field.label"]=>
+    string(5) "Label"
+    ["assetmgmt.template.editor.new.template"]=>
+    string(8) "Template"
+    ["assetmgmt.deletepopup.title"]=>
+    string(11) "Delete card"
+    ["servlet_record_not_available"]=>
+    string(71) "The card is no longer available or you have insufficient authorization."
+    ["errors.404.message.1"]=>
+    string(57) "The page you were trying to reach does not seem to exist."
+    ["errors.404.message.2"]=>
+    string(58) "This is usually the result of incorrect or outdated links."
+    ["assetmgmt.widget.relationship.link_child"]=>
+    string(13) "Link as child"
+    ["errors.404.message.3"]=>
+    string(35) "We apologize for the inconvenience."
+    ["assetmgmt.popup.body.migration.failed_to_migrate"]=>
+    string(42) "Failed to migrate %1% to Asset Management."
+    ["assetmgmt.template.explorer.migrate"]=>
+    string(19) "Migrate object type"
+    ["assetmgmt.widget.toolbar.upload_document"]=>
+    string(6) "Upload"
+    ["assetmgmt.widget.document.upload_failed"]=>
+    string(38) "An error has occurred while uploading."
+    ["assetmgmt.field.add.message"]=>
+    string(3) "Add"
+    ["assetmgmt.widget.assignment.assign"]=>
+    string(6) "Assign"
+    ["assetmgmt.widget.add_field.suggest_field.alphabetical_order"]=>
+    string(39) "Options will be ordered alphabetically."
+    ["tas.reference.save"]=>
+    string(4) "Save"
+    ["assetmgmt.widget.relationship.link_parent"]=>
+    string(14) "Link as parent"
+    ["assetmgmt.widget.fieldset.placeholder"]=>
+    string(23) "Fields will appear here"
+    ["assetmgmt.widget.relationship.title"]=>
+    string(13) "Relationships"
+    ["assetmgmt.delete_warning"]=>
+    string(33) "Deleting a card cannot be undone."
+    ["assetmgmt.popup.body.migration.type"]=>
+    string(4) "Type"
+    ["assetmgmt.field.remove"]=>
+    string(12) "Remove field"
+    ["tas.reference.done"]=>
+    string(4) "Done"
+    ["assetmgmt.widget.history.items.placeholder"]=>
+    string(31) "History items will appear here."
+  }
+  ["fields"]=>
+  array(9) {
+    ["mac-address"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(9) "textField"
+      ["fieldName"]=>
+      string(11) "mac-address"
+      ["displayName"]=>
+      string(11) "MAC Address"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(2) {
+        ["multilineSupport"]=>
+        bool(false)
+        ["maxLength"]=>
+        int(1000)
+      }
+      ["@etag"]=>
+      string(32) "2017-02-17T07:02:13.279         "
+    }
+    ["ip-address"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(9) "textField"
+      ["fieldName"]=>
+      string(10) "ip-address"
+      ["displayName"]=>
+      string(10) "IP Address"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(2) {
+        ["multilineSupport"]=>
+        bool(false)
+        ["maxLength"]=>
+        int(1000)
+      }
+      ["@etag"]=>
+      string(32) "2017-02-17T07:02:18.024         "
+    }
+    ["storage-gb"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(11) "numberField"
+      ["fieldName"]=>
+      string(10) "storage-gb"
+      ["displayName"]=>
+      string(12) "Storage (GB)"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(1) {
+        ["fractionals"]=>
+        int(0)
+      }
+      ["@etag"]=>
+      string(32) "2017-02-17T06:59:32.083         "
+    }
+    ["name"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(9) "textField"
+      ["fieldName"]=>
+      string(4) "name"
+      ["resourceKey"]=>
+      string(30) "assetmgmt.overview.column.name"
+      ["mandatory"]=>
+      bool(true)
+      ["properties"]=>
+      array(1) {
+        ["maxLength"]=>
+        int(60)
+      }
+      ["@etag"]=>
+      string(4) "NULL"
+    }
+    ["specification"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(9) "textField"
+      ["fieldName"]=>
+      string(13) "specification"
+      ["resourceKey"]=>
+      string(39) "assetmgmt.overview.column.specification"
+      ["mandatory"]=>
+      bool(true)
+      ["properties"]=>
+      array(1) {
+        ["maxLength"]=>
+        int(60)
+      }
+      ["@etag"]=>
+      string(4) "NULL"
+    }
+    ["purchase-date"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(13) "dateTimeField"
+      ["fieldName"]=>
+      string(13) "purchase-date"
+      ["displayName"]=>
+      string(13) "Purchase date"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(1) {
+        ["showTime"]=>
+        bool(false)
+      }
+      ["@etag"]=>
+      string(32) "2017-02-17T07:01:45.419         "
+    }
+    ["purchase-price"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(11) "numberField"
+      ["fieldName"]=>
+      string(14) "purchase-price"
+      ["displayName"]=>
+      string(14) "Purchase price"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(1) {
+        ["fractionals"]=>
+        int(0)
+      }
+      ["@etag"]=>
+      string(32) "2017-02-17T07:02:06.391         "
+    }
+    ["memory-gb"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(9) "textField"
+      ["fieldName"]=>
+      string(9) "memory-gb"
+      ["displayName"]=>
+      string(11) "Memory (GB)"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(2) {
+        ["multilineSupport"]=>
+        bool(false)
+        ["maxLength"]=>
+        int(1000)
+      }
+      ["@etag"]=>
+      string(32) "2017-02-17T06:59:04.934         "
+    }
+    ["computer-brand"]=>
+    array(5) {
+      ["fieldType"]=>
+      string(12) "suggestField"
+      ["fieldName"]=>
+      string(14) "computer-brand"
+      ["displayName"]=>
+      string(14) "Computer Brand"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(7) {
+        ["ownOptions"]=>
+        bool(true)
+        ["usersCanAddOptions"]=>
+        bool(false)
+        ["url"]=>
+        string(54) "assets?templateId=7B4CD072-2C9F-44BB-9EBE-18F24038301A"
+        ["saveUrl"]=>
+        string(68) "assets/updateDataSet?templateId=7B4CD072-2C9F-44BB-9EBE-18F24038301A"
+        ["unid"]=>
+        string(36) "48BAD38E-2EBB-418E-9C9E-E2784C7F79A9"
+        ["templateId"]=>
+        string(36) "7B4CD072-2C9F-44BB-9EBE-18F24038301A"
+        ["dataset"]=>
+        string(36) "7B4CD072-2C9F-44BB-9EBE-18F24038301A"
+      }
+    }
+  }
+  ["toolbars"]=>
+  array(2) {
+    [0]=>
+    array(2) {
+      ["visibility"]=>
+      string(8) "cardMode"
+      ["functionalities"]=>
+      array(2) {
+        [0]=>
+        array(3) {
+          ["primary"]=>
+          bool(false)
+          ["name"]=>
+          string(15) "enterDesignMode"
+          ["resourceKey"]=>
+          string(41) "assetmgmt.functionality.enter_design_mode"
+        }
+        [1]=>
+        array(3) {
+          ["primary"]=>
+          bool(true)
+          ["name"]=>
+          string(4) "save"
+          ["resourceKey"]=>
+          string(18) "tas.reference.save"
+        }
+      }
+    }
+    [1]=>
+    array(2) {
+      ["visibility"]=>
+      string(10) "designMode"
+      ["functionalities"]=>
+      array(3) {
+        [0]=>
+        array(3) {
+          ["primary"]=>
+          bool(false)
+          ["name"]=>
+          string(9) "exportCsv"
+          ["resourceKey"]=>
+          string(34) "assetmgmt.functionality.export_csv"
+        }
+        [1]=>
+        array(4) {
+          ["primary"]=>
+          bool(true)
+          ["name"]=>
+          string(15) "leaveDesignMode"
+          ["resourceKey"]=>
+          string(41) "assetmgmt.functionality.leave_design_mode"
+          ["styleInformation"]=>
+          string(15) "leaveDesignMode"
+        }
+        [2]=>
+        array(3) {
+          ["primary"]=>
+          bool(false)
+          ["name"]=>
+          string(17) "switchColumnRatio"
+          ["type"]=>
+          string(11) "widthSwitch"
+        }
+      }
+    }
+  }
+  ["status"]=>
+  int(200)
+  ["@etag"]=>
+  string(4) "NULL"
+}
+
+Server:
+array(8) {
+  ["settings"]=>
+  array(6) {
+    ["algemeen.bedragprefix"]=>
+    string(0) ""
+    ["algemeen.bedragpostfix"]=>
+    string(4) "euro"
+    ["dateFormat"]=>
+    string(14) "DD[-]MM[-]YYYY"
+    ["groupingDelimiter"]=>
+    string(1) ","
+    ["timeFormat"]=>
+    string(5) "HH:mm"
+    ["decimalDelimiter"]=>
+    string(1) "."
+  }
+  ["metadata"]=>
+  array(4) {
+    ["templateName"]=>
+    string(6) "Server"
+    ["template"]=>
+    array(1) {
+      ["tabs"]=>
+      array(1) {
+        [0]=>
+        array(2) {
+          ["resourceKey"]=>
+          string(21) "tas.reference.general"
+          ["columns"]=>
+          array(2) {
+            [0]=>
+            array(2) {
+              ["size"]=>
+              string(3) "1-2"
+              ["widgets"]=>
+              array(3) {
+                [0]=>
+                array(2) {
+                  ["widgetType"]=>
+                  string(13) "generalWidget"
+                  ["resourceKey"]=>
+                  string(21) "tas.reference.general"
+                }
+                [1]=>
+                array(4) {
+                  ["widgetType"]=>
+                  string(14) "fieldSetWidget"
+                  ["title"]=>
+                  string(7) "Details"
+                  ["resourceKey"]=>
+                  string(31) "assetmgmt.widget.fieldset.title"
+                  ["fields"]=>
+                  array(2) {
+                    [0]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(18) "fields/mac-address"
+                    }
+                    [1]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(17) "fields/ip-address"
+                    }
+                  }
+                }
+                [2]=>
+                array(2) {
+                  ["widgetType"]=>
+                  string(16) "assignmentWidget"
+                  ["resourceKey"]=>
+                  string(33) "assetmgmt.widget.assignment.title"
+                }
+              }
+            }
+            [1]=>
+            array(2) {
+              ["size"]=>
+              string(3) "1-2"
+              ["widgets"]=>
+              array(3) {
+                [0]=>
+                array(4) {
+                  ["widgetType"]=>
+                  string(14) "fieldSetWidget"
+                  ["title"]=>
+                  string(9) "Financial"
+                  ["resourceKey"]=>
+                  string(31) "assetmgmt.widget.fieldset.title"
+                  ["fields"]=>
+                  array(2) {
+                    [0]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(20) "fields/purchase-date"
+                    }
+                    [1]=>
+                    array(1) {
+                      ["$ref"]=>
+                      string(21) "fields/purchase-price"
+                    }
+                  }
+                }
+                [1]=>
+                array(2) {
+                  ["widgetType"]=>
+                  string(13) "historyWidget"
+                  ["resourceKey"]=>
+                  string(30) "assetmgmt.widget.history.title"
+                }
+                [2]=>
+                array(2) {
+                  ["widgetType"]=>
+                  string(18) "relationshipWidget"
+                  ["resourceKey"]=>
+                  string(35) "assetmgmt.widget.relationship.title"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ["icon"]=>
+    array(4) {
+      ["id"]=>
+      string(11) "server_room"
+      ["name"]=>
+      string(14) "Room (servers)"
+      ["url16"]=>
+      string(21) "/icons/server_room/16"
+      ["url32"]=>
+      string(21) "/icons/server_room/32"
+    }
+    ["@etag"]=>
+    string(32) "2017-02-17T07:03:15.188         "
+  }
+  ["data"]=>
+  array(11) {
+    ["@etag"]=>
+    string(4) "NULL"
+    ["archived"]=>
+    bool(false)
+    ["mac-address"]=>
+    NULL
+    ["unid"]=>
+    NULL
+    ["modificationDate"]=>
+    NULL
+    ["ip-address"]=>
+    NULL
+    ["type_id"]=>
+    string(36) "F317A904-829E-4D65-B2CE-F23A4AB92EBC"
+    ["name"]=>
+    NULL
+    ["specification"]=>
+    NULL
+    ["purchase-date"]=>
+    NULL
+    ["purchase-price"]=>
+    NULL
+  }
+  ["resources"]=>
+  array(181) {
+    ["assetmgmt.history.filter.title.filtered"]=>
+    string(8) "Filtered"
+    ["assetmgmt.widget.document.upload_status.no_files_selected"]=>
+    string(22) "No files are selected."
+    ["assetmgmt.widget.assignment.items.placeholder"]=>
+    string(44) "Assigned rooms and persons will appear here."
+    ["assetmgmt.field.users_can_add_options"]=>
+    string(21) "Users can add options"
+    ["assetmgmt.widget.document.upload_files"]=>
+    string(12) "Upload files"
+    ["assetmgmt.functionality.export_csv"]=>
+    string(16) "Get CSV template"
+    ["assetmgmt.widget.edit_field.possible_validation_change"]=>
+    string(51) "Changes will affect every occurrence of this field."
+    ["assetmgmt.design.add.widget"]=>
+    string(10) "Add widget"
+    ["errors.404.message.title"]=>
+    string(14) "What happened?"
+    ["assetmgmt.overview.error.cannotdelete"]=>
+    string(82) "Some cards could not be deleted because they are still linked to from other cards."
+    ["assetmgmt.widget.assignment.branch.link_exists"]=>
+    string(39) "The same site cannot be assigned twice."
+    ["assetmgmt.popup.body.migration.checking"]=>
+    string(36) "Checking the compatibility of %1%..."
+    ["assetmgmt.popup.footer.migration.select_another_type"]=>
+    string(19) "Select another type"
+    ["assetmgmt.popup.footer.migration.check_object_type"]=>
+    string(17) "Check object type"
+    ["assetmgmt.datasources.own_options"]=>
+    string(11) "Own options"
+    ["assetmgmt.widget.add_field.field_id"]=>
+    string(8) "Field id"
+    ["assetmgmt.widget.add_field.type"]=>
+    string(4) "Type"
+    ["assetmgmt.widget.add_field.text_field"]=>
+    string(4) "Text"
+    ["assetmgmt.popup.footer.migration.check_type"]=>
+    string(9) "Check %1%"
+    ["errors.404.message"]=>
+    string(69) "The specified URL is not recognized by the TOPdesk ApplicationServer."
+    ["assetmgmt.assetcard.new_asset_title"]=>
+    string(9) "New asset"
+    ["assetmgmt.widget.toolbar.assignments.assign_person"]=>
+    string(13) "Assign person"
+    ["assetmgmt.widget.relationship.toolbar.link_asset"]=>
+    string(10) "Link asset"
+    ["assetmgmt.widget.add_field.suggest_field.add"]=>
+    string(10) "Add option"
+    ["assetmgmt.widget.relationship.card_mode.placeholder"]=>
+    string(37) "There are no other assets linked yet."
+    ["assetmgmt.widget.add_field.suggest_field.option3"]=>
+    string(8) "Option 3"
+    ["assetmgmt.widget.remove"]=>
+    string(13) "Remove widget"
+    ["assetmgmt.field.length.maximum"]=>
+    string(14) "Maximum length"
+    ["assetmgmt.widget.remove.additional_message"]=>
+    string(41) "You can always restore individual fields."
+    ["assetmgmt.widget.document.upload_status.finished"]=>
+    string(19) "Uploading finished."
+    ["assetmgmt.assetcard.autosave.error"]=>
+    string(64) "A problem was encountered while saving. Please refresh the page."
+    ["assetmgmt.widget.add_field.suggest_field.new_option"]=>
+    string(10) "New option"
+    ["assetmgmt.history.assignment.assign.location"]=>
+    string(16) "assigned a room."
+    ["assetmgmt.unassign"]=>
+    string(8) "Unassign"
+    ["assetmgmt.widget.relationship.toolbar.unlink_asset"]=>
+    string(6) "Unlink"
+    ["assetmgmt.loading"]=>
+    string(7) "Loading"
+    ["assetmgmt.widget.history.title"]=>
+    string(7) "History"
+    ["assetmgmt.widget.add_field.suggest_field.option2"]=>
+    string(8) "Option 2"
+    ["assetmgmt.widget.add_field.suggest_field.option1"]=>
+    string(8) "Option 1"
+    ["assetmgmt.popup.body.migration.migrated"]=>
+    string(33) "Migrated %1% to Asset Management."
+    ["assetmgmt.card.close.title"]=>
+    string(11) "Close asset"
+    ["assetmgmt.widget.relationship.unlink_message"]=>
+    string(43) "Are you sure you want to unlink this asset?"
+    ["assetmgmt.history.assignment.unassign.branch"]=>
+    string(18) "unassigned a site."
+    ["assetmgmt.history.assignment.assign.branch"]=>
+    string(16) "assigned a site."
+    ["assetmgmt.functionality.enter_design_mode"]=>
+    string(16) "Open design mode"
+    ["assetmgmt.template.duplicated_name"]=>
+    string(36) "This template name is already taken."
+    ["assetmgmt.popup.footer.migration.migrate_another_type"]=>
+    string(20) "Migrate another type"
+    ["assetmgmt.unassign.question.person"]=>
+    string(46) "Are you sure you want to unassign this person?"
+    ["assetmgmt.popup.body.migration.migrating"]=>
+    string(36) "Migrating %1% to Asset Management..."
+    ["assetmgmt.overview.column.specification"]=>
+    string(13) "Specification"
+    ["assetmgmt.widget.add_field.button_edit_field"]=>
+    string(12) "Save changes"
+    ["assetmgmt.popup.header.feedback"]=>
+    string(17) "Give us feedback!"
+    ["assetmgmt.field.properties.showtime"]=>
+    string(9) "Show time"
+    ["assetmgmt.field.properties.is_currency"]=>
+    string(8) "Currency"
+    ["navigation.loading"]=>
+    string(10) "Loading…"
+    ["assetmgmt.template.explorer.templates.title"]=>
+    string(9) "Templates"
+    ["assetmgmt.history.assignment.assign.person"]=>
+    string(18) "assigned a person."
+    ["assetmgmt.overview.column.name"]=>
+    string(9) "Object ID"
+    ["assetmgmt.document.delete.message"]=>
+    string(46) "Are you sure you want to delete this document?"
+    ["assetmgmt.button.back"]=>
+    string(4) "Back"
+    ["assetmgmt.widget.toolbar.add_field"]=>
+    string(9) "Add field"
+    ["assetmgmt.history.assignment.unassign.person"]=>
+    string(20) "unassigned a person."
+    ["assetmgmt.unassign.question.location"]=>
+    string(44) "Are you sure you want to unassign this room?"
+    ["assetmgmt.widget.assignment.person.link_exists"]=>
+    string(57) "The same person or person group cannot be assigned twice."
+    ["assetmgmt.widget.add_field.number_field"]=>
+    string(6) "Number"
+    ["assetmgmt.template.editor.new.save"]=>
+    string(17) "Save new template"
+    ["assetmgmt.widget.add_field.suggest_field"]=>
+    string(9) "Drop-down"
+    ["assetmgmt.widget.add_field.checkbox_field"]=>
+    string(8) "Checkbox"
+    ["assetmgmt.popup.body.migration.warning"]=>
+    string(125) "Please be aware that migrated object types will be permanently unavailable in Configuration Management. Proceed with caution."
+    ["assetmgmt.widget.document.upload_status.uploading"]=>
+    string(9) "Uploading"
+    ["assetmgmt.template.explorer.title"]=>
+    string(23) "Asset template explorer"
+    ["errors.400.title"]=>
+    string(11) "Bad Request"
+    ["assetmgmt.popup.body.migration.success"]=>
+    string(53) "%1% can be migrated without any compatibility issues."
+    ["assetmgmt.widget.document.title"]=>
+    string(9) "Documents"
+    ["assetmgmt.history.empty"]=>
+    string(7) "(empty)"
+    ["assetmgmt.history.assignment.unassign.location"]=>
+    string(18) "unassigned a room."
+    ["assetmgmt.unassign.question.branch"]=>
+    string(44) "Are you sure you want to unassign this site?"
+    ["assetmgmt.field.suggest.no_results_found"]=>
+    string(17) "No results found."
+    ["assetmgmt.overview.deletepopup.title"]=>
+    string(12) "Delete cards"
+    ["assetmgmt.field.properties.multiline"]=>
+    string(28) "Allow multiple lines of text"
+    ["assetmgmt.widget.assignment.content.locations.title"]=>
+    string(5) "Rooms"
+    ["assetmgmt.widget.assignment.branch.title"]=>
+    string(4) "Site"
+    ["assetmgmt.popup.body.migration.type_selection"]=>
+    string(91) "Select the object type in Configuration Management you want to migrate to Asset Management."
+    ["assetmgmt.widget.toolbar.assignments.assign_location"]=>
+    string(11) "Assign room"
+    ["javascriptautocomplete_no_results_found"]=>
+    string(18) "(no results found)"
+    ["assetmgmt.widget.assignment.content.persons.title"]=>
+    string(7) "Persons"
+    ["assetmgmt.card.close.discard"]=>
+    string(7) "Discard"
+    ["assetmgmt.widget.relationship.select_asset"]=>
+    string(12) "Select asset"
+    ["assetmgmt.document.delete.additionalMessage"]=>
+    string(37) "Deleted documents cannot be restored."
+    ["assetmgmt.widget.add_field.suggest_field.label"]=>
+    string(18) "Selectable options"
+    ["assetmgmt.functionality.archive"]=>
+    string(7) "Archive"
+    ["button_close"]=>
+    string(5) "Close"
+    ["errors.404.title"]=>
+    string(14) "Page not found"
+    ["assetmgmt.popup.header.migration"]=>
+    string(39) "Migrate object type to Asset Management"
+    ["assetmgmt.widget.add_field.suggest_field.external_source"]=>
+    string(58) "{assetmgmt.widget.add_field.suggest_field.external_source}"
+    ["assetmgmt.popup.body.migration.checking_failed"]=>
+    string(38) "The compatibility check of %1% failed."
+    ["assetmgmt.widget.general.toolbar.change_icon"]=>
+    string(11) "Change icon"
+    ["assetmgmt.template.editor.new.placeholder"]=>
+    string(10) "Asset type"
+    ["assetmgmt.history.assignment.assign.persongroup"]=>
+    string(24) "assigned a person group."
+    ["assetmgmt.general.asset"]=>
+    string(5) "Asset"
+    ["assetmgmt.template.editor.empty_state"]=>
+    string(47) "Select a template from the left panel to begin."
+    ["assetmgmt.field.mandatory"]=>
+    string(9) "Mandatory"
+    ["assetmgmt.assetcard.title.template"]=>
+    string(8) "Template"
+    ["assetmgmt.widget.assignment.location.title"]=>
+    string(4) "Room"
+    ["assetmgmt.widget.toolbar.edit"]=>
+    string(4) "Edit"
+    ["assetmgmt.functionality.leave_design_mode"]=>
+    string(17) "Close design mode"
+    ["assetmgmt.field.remove.message"]=>
+    string(43) "Are you sure you want to remove this field?"
+    ["button_refresh"]=>
+    string(7) "Refresh"
+    ["assetmgmt.widget.document.upload_status.files_for_upload"]=>
+    string(24) "files marked for upload."
+    ["assetmgmt.history.assignment.modifications"]=>
+    string(11) "Assignments"
+    ["assetmgmt.delete_explanation"]=>
+    string(42) "Are you sure you want to delete %1% (%2%)?"
+    ["assetmgmt.widget.document.empty"]=>
+    string(44) "This asset does not have uploaded documents."
+    ["assetmgmt.assetcard.save.concurrent.modification"]=>
+    string(45) "This asset has been modified in the meantime."
+    ["httpactie.field.body.name"]=>
+    string(7) "Message"
+    ["tas.reference.general"]=>
+    string(7) "General"
+    ["assetmgmt.widget.relationship.cannot_link_itself"]=>
+    string(36) "An asset cannot be linked to itself."
+    ["assetmgmt.popup.body.migration.card"]=>
+    string(4) "Card"
+    ["assetmgmt.functionality.unarchive"]=>
+    string(9) "Unarchive"
+    ["assetmgmt.widget.relationship.children"]=>
+    string(8) "Children"
+    ["assetmgmt.design.select.widget"]=>
+    string(22) "Select a widget to add"
+    ["assetmgmt.widget.relationship.cannot_link_indirect"]=>
+    string(46) "An indirect link to this asset already exists."
+    ["assetmgmt.widget.document.choose_files"]=>
+    string(12) "Choose files"
+    ["assetmgmt.widget.assignment.title"]=>
+    string(10) "Assignment"
+    ["assetmgmt.template.editor.title"]=>
+    string(17) "Template explorer"
+    ["assetmgmt.widget.document.or_drop_files"]=>
+    string(24) "or drop your files here."
+    ["assetmgmt.widget.add_field.suggest_field.source"]=>
+    string(49) "{assetmgmt.widget.add_field.suggest_field.source}"
+    ["assetmgmt.field.suggest.can_not_add"]=>
+    string(23) "This option is invalid."
+    ["assetmgmt.card.close.content"]=>
+    string(135) "You have modified the card but the changes have not yet been saved. Do you wish to discard the changes or cancel to return to the card?"
+    ["button_cancel"]=>
+    string(6) "Cancel"
+    ["assetmgmt.template.new.title"]=>
+    string(12) "New Template"
+    ["assetmgmt.widget.add_field.suggest_field.remove"]=>
+    string(6) "Remove"
+    ["assetmgmt.widget.relationship.unlink_asset"]=>
+    string(12) "Unlink asset"
+    ["assetmgmt.document.delete"]=>
+    string(15) "Delete document"
+    ["assetmgmt.widget.remove.message"]=>
+    string(44) "Are you sure you want to remove this widget?"
+    ["assetmgmt.widget.relationship.parents"]=>
+    string(7) "Parents"
+    ["assetmgmt.template.explorer.create"]=>
+    string(15) "Create template"
+    ["assetmgmt.widget.toolbar.remove"]=>
+    string(6) "Remove"
+    ["assetmgmt.widget.document.items.placeholder"]=>
+    string(50) "Documents uploaded to this asset will appear here."
+    ["assetmgmt.unassign.question.person_group"]=>
+    string(52) "Are you sure you want to unassign this person group?"
+    ["assetmgmt.widget.assignment.person.title"]=>
+    string(22) "Person or person group"
+    ["assetmgmt.popup.footer.migration.migrate"]=>
+    string(11) "Migrate %1%"
+    ["assetmgmt.field.properties.decimal_precision"]=>
+    string(18) "Number of decimals"
+    ["tas.reference.archived"]=>
+    string(8) "Archived"
+    ["assetmgmt.archive_explanation"]=>
+    string(61) "You will not be able to modify this card once you archive it."
+    ["assetmgmt.widget.assignment.empty"]=>
+    string(53) "There are no rooms or persons assigned to this asset."
+    ["assetmgmt.popup.body.migration.error"]=>
+    string(71) "%1% cannot be migrated because some objects use the following features:"
+    ["assetmgmt.widget.add_field.date_time_field"]=>
+    string(9) "Date/time"
+    ["assetmgmt.widget.relationship.design_mode.placeholder"]=>
+    string(31) "Linked assets will appear here."
+    ["button_delete"]=>
+    string(6) "Delete"
+    ["assetmgmt.widget.edit_field.create_and_add_field"]=>
+    string(20) "Create and add field"
+    ["assetmgmt.widget.relationship.cannot_link_twice"]=>
+    string(32) "An asset cannot be linked twice."
+    ["assetmgmt.widget.general.select_icon"]=>
+    string(35) "Select an icon for this asset type:"
+    ["assetmgmt.history.assignment.unassign.persongroup"]=>
+    string(26) "unassigned a person group."
+    ["tas.default.archive_reason"]=>
+    string(20) "Reason for archiving"
+    ["assetmgmt.history.filter.title.all"]=>
+    string(3) "All"
+    ["errors.404.subtitle"]=>
+    string(59) "We are sorry, but the page you requested could not be found"
+    ["assetmgmt.widget.fieldset.title"]=>
+    string(8) "Fieldset"
+    ["assetmgmt.field.label"]=>
+    string(5) "Label"
+    ["assetmgmt.template.editor.new.template"]=>
+    string(8) "Template"
+    ["assetmgmt.deletepopup.title"]=>
+    string(11) "Delete card"
+    ["servlet_record_not_available"]=>
+    string(71) "The card is no longer available or you have insufficient authorization."
+    ["errors.404.message.1"]=>
+    string(57) "The page you were trying to reach does not seem to exist."
+    ["errors.404.message.2"]=>
+    string(58) "This is usually the result of incorrect or outdated links."
+    ["assetmgmt.widget.relationship.link_child"]=>
+    string(13) "Link as child"
+    ["errors.404.message.3"]=>
+    string(35) "We apologize for the inconvenience."
+    ["assetmgmt.popup.body.migration.failed_to_migrate"]=>
+    string(42) "Failed to migrate %1% to Asset Management."
+    ["assetmgmt.template.explorer.migrate"]=>
+    string(19) "Migrate object type"
+    ["assetmgmt.widget.toolbar.upload_document"]=>
+    string(6) "Upload"
+    ["assetmgmt.widget.document.upload_failed"]=>
+    string(38) "An error has occurred while uploading."
+    ["assetmgmt.field.add.message"]=>
+    string(3) "Add"
+    ["assetmgmt.widget.assignment.assign"]=>
+    string(6) "Assign"
+    ["assetmgmt.widget.add_field.suggest_field.alphabetical_order"]=>
+    string(39) "Options will be ordered alphabetically."
+    ["tas.reference.save"]=>
+    string(4) "Save"
+    ["assetmgmt.widget.relationship.link_parent"]=>
+    string(14) "Link as parent"
+    ["assetmgmt.widget.fieldset.placeholder"]=>
+    string(23) "Fields will appear here"
+    ["assetmgmt.widget.relationship.title"]=>
+    string(13) "Relationships"
+    ["assetmgmt.delete_warning"]=>
+    string(33) "Deleting a card cannot be undone."
+    ["assetmgmt.popup.body.migration.type"]=>
+    string(4) "Type"
+    ["assetmgmt.field.remove"]=>
+    string(12) "Remove field"
+    ["tas.reference.done"]=>
+    string(4) "Done"
+    ["assetmgmt.widget.history.items.placeholder"]=>
+    string(31) "History items will appear here."
+  }
+  ["fields"]=>
+  array(6) {
+    ["mac-address"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(9) "textField"
+      ["fieldName"]=>
+      string(11) "mac-address"
+      ["displayName"]=>
+      string(11) "MAC Address"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(2) {
+        ["multilineSupport"]=>
+        bool(false)
+        ["maxLength"]=>
+        int(1000)
+      }
+      ["@etag"]=>
+      string(32) "2017-02-17T07:02:13.279         "
+    }
+    ["ip-address"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(9) "textField"
+      ["fieldName"]=>
+      string(10) "ip-address"
+      ["displayName"]=>
+      string(10) "IP Address"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(2) {
+        ["multilineSupport"]=>
+        bool(false)
+        ["maxLength"]=>
+        int(1000)
+      }
+      ["@etag"]=>
+      string(32) "2017-02-17T07:02:18.024         "
+    }
+    ["name"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(9) "textField"
+      ["fieldName"]=>
+      string(4) "name"
+      ["resourceKey"]=>
+      string(30) "assetmgmt.overview.column.name"
+      ["mandatory"]=>
+      bool(true)
+      ["properties"]=>
+      array(1) {
+        ["maxLength"]=>
+        int(60)
+      }
+      ["@etag"]=>
+      string(4) "NULL"
+    }
+    ["specification"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(9) "textField"
+      ["fieldName"]=>
+      string(13) "specification"
+      ["resourceKey"]=>
+      string(39) "assetmgmt.overview.column.specification"
+      ["mandatory"]=>
+      bool(true)
+      ["properties"]=>
+      array(1) {
+        ["maxLength"]=>
+        int(60)
+      }
+      ["@etag"]=>
+      string(4) "NULL"
+    }
+    ["purchase-date"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(13) "dateTimeField"
+      ["fieldName"]=>
+      string(13) "purchase-date"
+      ["displayName"]=>
+      string(13) "Purchase date"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(1) {
+        ["showTime"]=>
+        bool(false)
+      }
+      ["@etag"]=>
+      string(32) "2017-02-17T07:01:45.419         "
+    }
+    ["purchase-price"]=>
+    array(6) {
+      ["fieldType"]=>
+      string(11) "numberField"
+      ["fieldName"]=>
+      string(14) "purchase-price"
+      ["displayName"]=>
+      string(14) "Purchase price"
+      ["mandatory"]=>
+      bool(false)
+      ["properties"]=>
+      array(1) {
+        ["fractionals"]=>
+        int(0)
+      }
+      ["@etag"]=>
+      string(32) "2017-02-17T07:02:06.391         "
+    }
+  }
+  ["toolbars"]=>
+  array(2) {
+    [0]=>
+    array(2) {
+      ["visibility"]=>
+      string(8) "cardMode"
+      ["functionalities"]=>
+      array(2) {
+        [0]=>
+        array(3) {
+          ["primary"]=>
+          bool(false)
+          ["name"]=>
+          string(15) "enterDesignMode"
+          ["resourceKey"]=>
+          string(41) "assetmgmt.functionality.enter_design_mode"
+        }
+        [1]=>
+        array(3) {
+          ["primary"]=>
+          bool(true)
+          ["name"]=>
+          string(4) "save"
+          ["resourceKey"]=>
+          string(18) "tas.reference.save"
+        }
+      }
+    }
+    [1]=>
+    array(2) {
+      ["visibility"]=>
+      string(10) "designMode"
+      ["functionalities"]=>
+      array(3) {
+        [0]=>
+        array(3) {
+          ["primary"]=>
+          bool(false)
+          ["name"]=>
+          string(9) "exportCsv"
+          ["resourceKey"]=>
+          string(34) "assetmgmt.functionality.export_csv"
+        }
+        [1]=>
+        array(4) {
+          ["primary"]=>
+          bool(true)
+          ["name"]=>
+          string(15) "leaveDesignMode"
+          ["resourceKey"]=>
+          string(41) "assetmgmt.functionality.leave_design_mode"
+          ["styleInformation"]=>
+          string(15) "leaveDesignMode"
+        }
+        [2]=>
+        array(3) {
+          ["primary"]=>
+          bool(false)
+          ["name"]=>
+          string(17) "switchColumnRatio"
+          ["type"]=>
+          string(11) "widthSwitch"
+        }
+      }
+    }
+  }
+  ["status"]=>
+  int(200)
+  ["@etag"]=>
+  string(4) "NULL"
+}
